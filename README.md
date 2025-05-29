@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,23 +12,20 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### DATABASE
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create <code>.env or .env.local</code>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+  - DATABASE_URL=postgres://username:password@localhost:port-database/database_name
+  - NEXT_PUBLIC_BASE_DOMAIN=http://localhost:3000
+  - NODE_ENV=development
+```
 
-## Learn More
+### TESTING CONNECTION WITH DATABASE
 
-To learn more about Next.js, take a look at the following resources:
+Open Terminal Type CLI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+  - psql postgres://username-db:password-db@localhost:port-db/database_name
+```
