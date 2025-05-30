@@ -1,7 +1,0 @@
-const Narbar = () => {
-  return (
-    <>
-    
-    </>
-  )
-}

@@ -11,7 +11,10 @@ export async function POST(req: Request) {
     const parsed = createCustomerSchema.safeParse(body);
 
     if (!parsed.success) {
-      return NextResponse.json(BadRequestException);
+      return NextResponse.json(
+        { message: "Invalid input", errors: parsed.error.flatten() },
+        { status: 400 }
+      );
     }
 
     const customerService = new CustomerService(db);
@@ -20,6 +23,10 @@ export async function POST(req: Request) {
     return NextResponse.json(newCustomer, { status: 201 });
   } catch (error) {
     console.error("Create customer failed:", error);
-    return NextResponse.json(InternalServerErrorException);
+
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
   }
 }

@@ -1,9 +1,9 @@
-import CreateCustomerFrom from "./CreateCustomerFrom";
+import CreateCustomer from "../(components)/CreateCustomer";
 
 const CustomerPage = () => {
   return (
     <>
-      <CreateCustomerFrom />
+      <CreateCustomer />
     </>
   );
 };
